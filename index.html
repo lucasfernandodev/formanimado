@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <section class="container">
+        <div class="container-text">
+            <div class="signin">
+                <h2 class="title">Você tem uma conta?</h2>
+                <button class="btn btn-signin">Sing in</button>
+            </div>
+
+            <div class="signup">
+                <h2 class="title">Não tem conta?</h2>
+                <button class="btn btn-signup">Sing Up</button>
+            </div>
+        </div>
+
+        <div class="container-form">
+
+            <div class="wrapper">
+                <!-- Sign In -->
+                <form class="form-signin">
+                    <div class="field">
+                        <label for="username" class="label">Username</label>
+                        <input type="text" id="username" class="input" placeholder="Username" />
+                    </div>
+
+                    <div class="field">
+                        <label for="passwordSignin" class="label">Password</label>
+                        <input type="password" id="passwordSignin" class="input" placeholder="Password" />
+                    </div>
+
+                    <button class="btn btn-action">Sign In</button>
+                </form>
+
+                <!-- Sign Up -->
+                <form class="form-signup">
+                    <div class="field">
+                        <label for="Email" class="label">Email</label>
+                        <input type="email" id="email" class="input" placeholder="Email" />
+                    </div>
+                    <div class="field">
+                        <label for="username" class="label">Username</label>
+                        <input type="text" id="username" class="input" placeholder="Username" />
+                    </div>
+
+                    <div class="field">
+                        <label for="passwordSignup" class="label">Password</label>
+                        <input type="password" id="passwordSignup" class="input" placeholder="Password" />
+                    </div>
+
+                    <button class="btn btn-action">Sing Up</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

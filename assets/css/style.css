@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: #786fa6;
+    color: #fafafa;
+    font-size: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/bg.png) center no-repeat;
+}
+
+body, button, input{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+button, input{
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+.btn{
+    cursor: pointer;
+    display: block;
+    background: transparent;
+    border: 1px solid #fafafa;
+    color: #fafafa;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.btn-action{
+    width: 140px;
+    height: 40px;
+    background: #786fa6;
+    color: #fafafa;
+    margin: 0 auto;
+}
+
+.field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.field .label{
+    display: none;
+}
+
+.field input{
+    width: 100%;
+    max-width: 310px;
+    border: 1px solid #786fa6;
+    height: 40px;
+    padding-left: 15px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+
+.container{
+    width: 55vw;
+    height: 400px;
+    background: rgba(48, 57, 82, .8);
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    transition: all 280ms linear;
+}
+
+.container .container-text{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.container .container-text .signin,
+.container .container-text .signup{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .container-text .signin .title,
+.container .container-text .signup .title{
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.container .container-text .signin .btn,
+.container .container-text .signup .btn{
+    width: 140px;
+    height: 40px;
+}
+
+
+/* Form */
+.container-form{
+    display: flex;
+    position: absolute;
+    height: 120%;
+    width: 330px;
+    background: rgba(250, 250, 250, 1);
+    top: -10%;
+    left: 2rem;
+    transition: all 300ms linear;
+}
+
+.container-form .wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.container-form .form-signin{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(0);
+    transition: 550ms ease-in-out;
+}
+
+.container-form .form-signup{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(1000px);
+    transition: 550ms ease-in-out;
+}
+
+
+/* Faz a animação de movimento do form */
+.activeSignUp{
+    animation: signup ease-in-out;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.activeSignUp .form-signin{
+    transform: translateY(-50%) translateX(-1000px);
+}
+
+.activeSignUp .form-signup{
+    transform: translateY(-50%) translateX(0);
+}
+
+
+.activeSignIn{
+    animation: signin ease-in-out;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;  
+}
+
+@keyframes signup{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: calc((100% - 330px) - 2rem);
+    }
+}
+
+@keyframes signin{
+    0%{
+        left: calc((100% - 330px) - 2rem)
+    }
+    100%{
+        right: calc((100% - 330px) - 2rem);
+    }
+}
+
+/* Animação de quando o usuario faz login ou cria a conta com sucesso */
+.container.active{
+    width: 260px;
+    height: 140px;
+    position: relative;
+    background: transparent;
+}
+
+.container.active .activeSignUp,
+.container.active .activeSignIn{
+    animation: unset;
+}
+
+
+.container.active .container-text{
+    display: none;
+}
+
+.container.active  .wrapper{
+    display: none !important;
+    visibility: hidden;
+}
+
+.container.active .container-form{
+    width: 145px;
+    height: 145px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: initial;
+    bottom: initial;
+    border-radius: 50%;
+}
+
+.container.active .container-form::before{
+    content: "✔";
+    position: absolute;
+    font-size: 92px;
+    color: #786fa6;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
